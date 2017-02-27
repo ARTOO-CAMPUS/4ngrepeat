@@ -19,15 +19,21 @@
   <div ng-controller="ItemCtrl">
     <div class="container">
       <!--<h1 >{{titolo}}</h1>-->
-      <h1 ng-bind="titolo"></h1>
+      <div class="text-center">
+        <h1 ng-bind="titolo"></h1>
+      </div>
       <!-- interpolate the data to the view -->
-      <div ng-show="arma">
-        <h4>{{arma.nome}}</h4>
-        <span>Slots: {{arma.slots}}</span>
-        <div class="row">
-          <div class="col-sm-4 col-sm-offset-4">
-            <img class="img-responsive" ng-src="{{arma.image}}">
+      <div ng-show="armi">
+        <div ng-repeat="arma in armi" style="padding: 10px 0">
+          <h2>{{arma.name}}</h2>
+          <p>{{arma.description}}</p>
+          <p>Slots: {{arma.slots}}</p>
+          <div class="row">
+            <div class="col-sm-4 col-sm-offset-4">
+              <img class="img-responsive" ng-src="{{arma.image}}">
+            </div>
           </div>
+          <hr>
         </div>
 
       </div>
